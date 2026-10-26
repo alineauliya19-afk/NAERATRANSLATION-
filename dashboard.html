@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Admin | NAERA TRANSLATION</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <header class="admin-header"><a class="admin-brand" href="index.html"><span>N</span><b>NAERA <i>TRANSLATION</i></b></a><a href="index.html">← Lihat website</a></header>
+  <main class="admin-main">
+    <section class="login-panel" id="loginPanel">
+      <p class="eyebrow">PRIVATE AREA / ADMIN</p><h1>Selamat datang kembali.</h1><p class="muted">Masuk untuk melihat pertanyaan yang dikirim melalui website NAERA TRANSLATION.</p>
+      <form id="loginForm"><label for="adminEmail">Email admin</label><input id="adminEmail" type="email" autocomplete="username" required placeholder="Email admin Supabase"><label for="adminPassword">Password</label><input id="adminPassword" type="password" autocomplete="current-password" required placeholder="Password akun admin"><button type="submit" id="loginButton">Masuk ke dashboard ↗</button><p id="loginStatus" class="status" role="status"></p></form>
+      <small>Akun admin harus dibuat terlebih dahulu di Supabase Authentication. Jangan bagikan password Anda.</small>
+    </section>
+    <section class="inbox" id="inboxPanel" hidden>
+      <div class="inbox-head"><div><p class="eyebrow">NAERA / INBOX</p><h1>Pesan pelanggan</h1><p class="muted">Pesan masuk dari formulir website.</p></div><button class="button-secondary" id="logoutButton">Keluar</button></div>
+      <div id="inboxStatus" class="status" role="status"></div><div id="messageList" class="message-list"></div>
+    </section>
+  </main>
+  <footer class="admin-footer">NAERA TRANSLATION · Admin dashboard</footer>
+</body>
+</html>
