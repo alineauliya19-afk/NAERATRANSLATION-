@@ -12,6 +12,6 @@ Unggah semua file ke folder utama repository, lalu commit changes. Bahasa Indone
 ## Penting
 - Formulir email menggunakan FormSubmit dan perlu konfirmasi email pemilik pada pengiriman pertama. Uji formulir sebelum digunakan.
 - Harga ditampilkan sebagai harga awal. Satuan harga (per halaman/per dokumen/jumlah kata) harus dijelaskan dan dikonfirmasi kepada pelanggan sebelum menerima pesanan.
-- Contoh hasil terjemahan adalah demonstrasi, bukan proyek klien. Galeri merupakan visual konsep.
-- Ketentuan layanan adalah contoh awal, bukan kontrak final. Sesuaikan dengan praktik bisnis dan aturan yang berlaku.
+- Sampel terjemahan berfungsi sebagai contoh kemampuan bahasa; jangan mengklaimnya sebagai proyek klien. Galeri berisi visual representatif.
+- Pastikan ketentuan layanan, harga, estimasi waktu, dan kebijakan revisi sesuai dengan layanan yang benar-benar dapat diberikan.
 - Tidak ada layanan terjemahan tersumpah atau legalisasi yang dijanjikan dalam website ini.
