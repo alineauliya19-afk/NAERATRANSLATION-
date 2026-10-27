@@ -11,7 +11,7 @@ Unggah semua file ke folder utama repository, lalu commit changes. Bahasa Indone
 
 ## Penting
 - Formulir email menggunakan FormSubmit dan perlu konfirmasi email pemilik pada pengiriman pertama. Uji formulir sebelum digunakan.
-- Harga ditampilkan sebagai harga awal. Satuan harga (per halaman/per dokumen/jumlah kata) harus dijelaskan dan dikonfirmasi kepada pelanggan sebelum menerima pesanan.
-- Sampel terjemahan berfungsi sebagai contoh kemampuan bahasa; jangan mengklaimnya sebagai proyek klien. Galeri berisi visual representatif.
-- Pastikan ketentuan layanan, harga, estimasi waktu, dan kebijakan revisi sesuai dengan layanan yang benar-benar dapat diberikan.
+- Harga: Reguler Rp30.000 per halaman (estimasi 7–8 hari); Fasttrack Rp65.000 per halaman (estimasi 4–5 hari).
+- Sampel terjemahan dan visual galeri ditampilkan untuk memperkenalkan layanan NAERA TRANSLATION.
+- Pastikan ketentuan layanan dan proses pemesanan sesuai dengan layanan yang benar-benar diberikan.
 - Tidak ada layanan terjemahan tersumpah atau legalisasi yang dijanjikan dalam website ini.
