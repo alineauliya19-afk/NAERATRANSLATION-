@@ -1,14 +1,17 @@
-NAERA TRANSLATION — OUR TEAM PAGE
+NAERA TRANSLATION — OUR TEAM TERINTEGRASI
 
-File:
-- our-team.html
+Pembaruan ini memasukkan bagian Our Team langsung ke halaman utama versi Bahasa Indonesia dan Bahasa Inggris.
+Menu Our Team mengarah ke bagian #team pada halaman yang sama (bukan halaman terpisah).
 
-This is an English-language Our Team page using a black-and-gold style that matches the existing NAERA TRANSLATION website.
+Isi website sebelumnya dipertahankan; perubahan hanya:
+- menambahkan tautan Our Team pada menu setelah Tentang/About;
+- menambahkan bagian Our Team berisi lima posisi ke kedua homepage;
+- menambahkan CSS agar tampil selaras dengan tema hitam-emas dan responsif.
 
-Installation:
-1. Upload our-team.html to the root of the GitHub repository (the same folder as index.html and index-en.html).
-2. Commit the change.
-3. The page will be available at:
-   https://alineauliya19-afk.github.io/NAERATRANSLATION-/our-team.html
+Pemasangan:
+1. Ganti index.html, index-en.html, dan style.css di repository GitHub dengan file dari ZIP ini.
+2. Jangan hapus file lain yang sudah ada. Pertahankan script.js, aset, dan file pendukung lainnya.
+3. File our-team.html lama boleh tetap ada; halaman utama sekarang menggunakan bagian #team dan tidak lagi bergantung pada halaman terpisah tersebut.
+4. Commit changes di GitHub.
 
-The existing homepage files are not replaced or modified by this ZIP.
+Catatan: script.js tidak disertakan dalam file sumber yang diberikan, jadi pertahankan script.js yang sudah ada di repository.

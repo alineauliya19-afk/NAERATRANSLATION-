@@ -24,3 +24,20 @@
 .service-type-grid p{margin:8px 0 0;font-size:.92rem;line-height:1.65}
 .language-link{display:inline-flex;align-items:center;color:var(--gold,#c7a45b);font-size:.82rem;letter-spacing:.04em}
 @media(max-width:700px){.service-type-grid{grid-template-columns:1fr}.service-types{padding:18px}}
+
+
+/* Our Team — integrated section for both language homepages */
+.team-section{background:#11100e;color:var(--text);display:grid;grid-template-columns:.8fr 1.2fr;gap:52px;align-items:start}
+.team-heading{position:sticky;top:35px}
+.team-heading h2{font:500 clamp(36px,4.3vw,53px)/1.15 'Playfair Display',serif;margin:14px 0}
+.team-heading h2 em{color:var(--gold2);font-weight:500}
+.team-heading>p:last-child{font-size:13px;line-height:1.9;color:var(--muted);max-width:390px}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.team-card{padding:24px;border:1px solid #51432c;background:linear-gradient(145deg,#211f19,#171611);min-height:185px}
+.team-role{font-size:8px;letter-spacing:1.7px;text-transform:uppercase;color:var(--gold)}
+.team-card h3{font:600 24px 'Playfair Display',serif;margin:12px 0 9px;color:#f4eee1}
+.team-card p{font-size:11px;line-height:1.85;color:#b8b0a0;margin:0}
+.team-card p a{color:var(--gold2);text-decoration:underline;text-underline-offset:3px}
+.team-card-wide{grid-column:1/-1}
+@media(max-width:850px){.team-section{grid-template-columns:1fr;gap:24px}.team-heading{position:static}.team-heading>p:last-child{max-width:650px}}
+@media(max-width:620px){.team-grid{grid-template-columns:1fr}.team-card-wide{grid-column:auto}.team-card{padding:22px}}
