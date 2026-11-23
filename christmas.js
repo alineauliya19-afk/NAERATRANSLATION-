@@ -1,50 +1,64 @@
-/* NAERA TRANSLATION - CHRISTMAS SPECIAL 2026 */
+
+/* ============================================
+   NAERA TRANSLATION
+   CHRISTMAS & NEW YEAR SPECIAL 2026
+   COMPLETE VERSION
+============================================ */
+
 (() => {
   "use strict";
 
   if (window.naeraChristmasLoaded) return;
   window.naeraChristmasLoaded = true;
 
-  const english =
-    document.documentElement.lang.toLowerCase().startsWith("en");
+  const english = document.documentElement.lang
+    .toLowerCase().startsWith("en");
 
-  const style = document.createElement("style");
-  style.textContent = `
+  const CSS = `
     :root {
-      --christmas-red: #9e1028;
-      --christmas-green: #075b40;
-      --christmas-gold: #e8c477;
-      --christmas-cream: #fff8e9;
+      --xmas-red: #a41230;
+      --xmas-green: #075b40;
+      --xmas-gold: #e8c477;
+      --xmas-cream: #fff8e9;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      background: var(--christmas-cream) !important;
+      background: var(--xmas-cream) !important;
     }
 
     .header, header.header {
       background: #073e30 !important;
-      border-bottom: 3px solid var(--christmas-gold) !important;
+      border-bottom: 3px solid var(--xmas-gold) !important;
     }
 
-    .header a, .header .brand,
-    .header .brand-name, .header button {
+    .header a,
+    .header .brand,
+    .header .brand-name,
+    .header button {
       color: #fff8e9 !important;
     }
 
     .hero, #home {
       background:
-        radial-gradient(circle at 85% 25%,
-          rgba(232,196,119,.19), transparent 35%),
-        linear-gradient(135deg,
-          #063e30 0%, #075b40 45%, #790d24 100%) !important;
+        radial-gradient(
+          circle at 85% 25%,
+          rgba(232,196,119,.19),
+          transparent 35%
+        ),
+        linear-gradient(
+          135deg,
+          #063e30,
+          #075b40 45%,
+          #790d24
+        ) !important;
       color: white !important;
-      position: relative;
-      overflow: hidden;
     }
 
-    .hero h1, .hero p, .hero .eyebrow,
+    .hero h1,
+    .hero p,
+    .hero .eyebrow,
     .hero .hero-lead {
       color: #fff8e9 !important;
     }
@@ -61,65 +75,88 @@
       color: #b71b36;
     }
 
-    .btn-gold, .nav-contact, .submit-btn {
-      background: linear-gradient(135deg,
-        #e9c77d, #fff0b5) !important;
+    .btn-gold,
+    .nav-contact,
+    .submit-btn {
+      background: linear-gradient(
+        135deg, #e9c77d, #fff0b5
+      ) !important;
       color: #48231b !important;
       border-radius: 30px !important;
     }
 
-    .service-card, .price-card, .sample-card {
+    .service-card,
+    .price-card,
+    .sample-card {
       border: 2px solid rgba(7,91,64,.24) !important;
       border-radius: 18px !important;
     }
 
+    /* FASTTRACK PROMO */
+
     .price-card-featured {
-      background: linear-gradient(145deg,
-        #075b40, #08382e) !important;
+      background: linear-gradient(
+        145deg, #075b40, #08382e
+      ) !important;
       border: 3px solid #e8c477 !important;
       box-shadow: 0 12px 35px rgba(112,0,27,.22);
     }
 
-    .price-card-featured,
     .price-card-featured h3,
     .price-card-featured p,
     .price-card-featured span {
       color: #fff8e9 !important;
     }
 
-    .naera-old-price {
-      text-decoration: line-through;
-      opacity: .75;
-      font-size: 19px;
-      margin: 12px 0 3px;
-      color: #ffe2c9;
-    }
-
-    .naera-new-price {
-      font-size: clamp(30px, 5vw, 49px);
-      font-weight: 800;
-      color: #ffe49b !important;
-      margin: 5px 0 15px;
-      line-height: 1.2;
-    }
-
     .naera-promo-label {
       display: inline-block;
-      padding: 8px 13px;
-      background: #aa1733;
+      padding: 9px 14px;
+      background: #a41230;
       color: white !important;
       border: 1px solid #e8c477;
       border-radius: 30px;
       font-size: 12px;
       font-weight: 800;
-      letter-spacing: .6px;
+      margin-bottom: 12px;
     }
 
+    .naera-old-price {
+      text-decoration: line-through;
+      color: white !important;
+      opacity: .85;
+      font-size: 19px;
+      margin: 10px 0;
+    }
+
+    .naera-new-price {
+      display: block;
+      width: fit-content;
+      max-width: 100%;
+      margin: 12px auto 18px;
+      padding: 12px 18px;
+      background: white !important;
+      color: #c8102e !important;
+      border: 3px solid #e8c477;
+      border-radius: 14px;
+      font-size: clamp(25px,4vw,43px);
+      font-weight: 900;
+      line-height: 1.2;
+      text-align: center;
+      box-shadow: 0 5px 16px rgba(0,0,0,.18);
+    }
+
+    .price-card-featured .naera-new-price {
+      color: #c8102e !important;
+    }
+
+    /* HOLIDAY BANNER */
+
     .naera-holiday-banner {
-      background: linear-gradient(110deg,
-        #850c27, #bd1835, #075b40);
+      background: linear-gradient(
+        110deg, #850c27, #bd1835, #075b40
+      );
       color: white;
-      padding: 26px 18px;
+      padding: 35px 20px;
       text-align: center;
       border-top: 3px solid #e8c477;
       border-bottom: 3px solid #e8c477;
@@ -129,44 +166,125 @@
 
     .naera-holiday-banner h2 {
       color: #ffe5a1 !important;
-      font-size: clamp(23px, 4vw, 39px);
-      margin: 10px 0;
+      font-size: clamp(23px,4vw,39px);
+      margin: 12px 0;
     }
 
     .naera-holiday-banner p {
       color: white !important;
-      margin: 8px auto;
-      max-width: 650px;
+      margin: 10px auto;
     }
 
     .naera-holiday-banner a {
       display: inline-block;
-      margin-top: 15px;
-      padding: 12px 24px;
-      border-radius: 30px;
+      margin-top: 18px;
+      padding: 13px 26px;
       background: #fff1c8;
       color: #721326;
       font-weight: 800;
       text-decoration: none;
+      border-radius: 30px;
+      transition: transform .3s ease;
     }
 
-    .naera-santa {
+    .naera-holiday-banner a:hover {
+      transform: translateY(-3px);
+    }
+
+    .naera-banner-old {
+      text-decoration: line-through;
+      color: white;
+      opacity: .8;
+      font-size: 21px;
+    }
+
+    .naera-banner-price {
       display: inline-block;
-      font-size: 50px;
-      animation: naeraWave 2.5s ease-in-out infinite;
+      background: white;
+      color: #c8102e;
+      padding: 10px 22px;
+      border-radius: 15px;
+      font-size: clamp(28px,5vw,44px);
+      font-weight: 900;
+      margin: 10px auto;
     }
 
-    .naera-tree {
+    /* TWO SIDE SANTAS */
+
+    .naera-side-santa {
       position: fixed;
-      right: 12px;
-      bottom: 15px;
-      z-index: 50;
-      font-size: 57px;
-      transform-origin: bottom center;
-      animation: naeraTree 3.2s ease-in-out infinite;
+      top: 43%;
+      z-index: 900;
       pointer-events: none;
-      filter: drop-shadow(0 5px 8px rgba(0,0,0,.22));
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: santaSwing 3.5s ease-in-out infinite;
+      filter: drop-shadow(0 5px 8px rgba(0,0,0,.25));
     }
+
+    .naera-side-santa.left { left: 4px; }
+
+    .naera-side-santa.right {
+      right: 4px;
+      animation-delay: -1.7s;
+    }
+
+    .naera-side-santa .santa-icon {
+      font-size: 85px;
+      line-height: 1.1;
+    }
+
+    .naera-side-santa .gift-icon {
+      font-size: 32px;
+    }
+
+    @keyframes santaSwing {
+      0%,100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+      50% {
+        transform: translateY(-10px) rotate(5deg);
+      }
+    }
+
+    /* SIX CHRISTMAS TREES */
+
+    .naera-tree-side {
+      position: fixed;
+      z-index: 850;
+      pointer-events: none;
+      font-size: 46px;
+      line-height: 1;
+      filter: drop-shadow(0 3px 5px rgba(0,0,0,.2));
+      animation: treeSwing 3.4s ease-in-out infinite;
+    }
+
+    .naera-tree-side.left { left: 4px; }
+    .naera-tree-side.right { right: 4px; }
+
+    .naera-tree-side.t1 { top: 12%; }
+    .naera-tree-side.t2 { top: 32%; }
+    .naera-tree-side.t3 { top: 78%; }
+
+    .naera-tree-side.right.t1 {
+      animation-delay: -.7s;
+    }
+
+    .naera-tree-side.right.t2 {
+      animation-delay: -1.3s;
+    }
+
+    .naera-tree-side.right.t3 {
+      animation-delay: -2s;
+    }
+
+    @keyframes treeSwing {
+      0%,100% { transform: rotate(-5deg); }
+      50% { transform: rotate(5deg); }
+    }
+
+    /* CONTINUOUS SNOW */
 
     .naera-snow {
       position: fixed;
@@ -183,128 +301,280 @@
       font-size: var(--size);
       color: white;
       opacity: var(--opacity);
-      text-shadow:
-        0 1px 4px #23534b,
-        0 0 7px rgba(0,0,0,.3);
-      animation: naeraSnow var(--duration) linear infinite;
+      text-shadow: 0 1px 4px #23534b;
+      animation: snowFall var(--duration)
+        linear infinite;
       animation-delay: var(--delay);
     }
 
-    @keyframes naeraSnow {
+    @keyframes snowFall {
       from {
-        transform: translate3d(0,-5vh,0) rotate(0);
+        transform: translate3d(0,-5vh,0);
       }
       to {
         transform:
-          translate3d(var(--drift),110vh,0)
-          rotate(180deg);
+          translate3d(var(--drift),110vh,0);
       }
     }
 
-    @keyframes naeraTree {
-      0%,100% { transform: rotate(-4deg); }
-      50% { transform: rotate(4deg); }
+    /* SIX SMALL REINDEER */
+
+    .naera-reindeer-parade {
+      position: fixed;
+      top: 23%;
+      left: 0;
+      z-index: 950;
+      pointer-events: none;
+      width: max-content;
+      animation: deerTravel 18s linear infinite;
+      will-change: transform;
     }
 
-    @keyframes naeraWave {
-      0%,100% { transform: rotate(-8deg); }
-      50% { transform: rotate(10deg); }
+    .naera-reindeer-line {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      animation: deerFloat 1.8s ease-in-out infinite;
     }
 
-    @media (max-width: 600px) {
-      .naera-tree {
-        font-size: 38px;
-        right: 6px;
-        bottom: 8px;
+    .naera-reindeer-animal {
+      display: inline-block;
+      font-size: 30px;
+      line-height: 1.2;
+      transform: scaleX(-1);
+      filter: drop-shadow(0 2px 3px rgba(0,0,0,.2));
+    }
+
+    .naera-reindeer-animal:nth-child(even) {
+      margin-top: 9px;
+    }
+
+    @keyframes deerTravel {
+      from {
+        transform: translateX(calc(100vw + 30px));
       }
+      to {
+        transform: translateX(-110%);
+      }
+    }
+
+    @keyframes deerFloat {
+      0%,100% { translate: 0 0; }
+      50% { translate: 0 -8px; }
+    }
+
+    /* PRICING NAVIGATION */
+
+    #pricing, #pricelist, #harga {
+      scroll-margin-top: 110px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width:600px) {
+      .naera-side-santa {
+        top: 54%;
+      }
+
+      .naera-side-santa .santa-icon {
+        font-size: 40px;
+      }
+
+      .naera-side-santa .gift-icon {
+        font-size: 18px;
+      }
+
+      .naera-tree-side {
+        font-size: 26px;
+      }
+
+      .naera-tree-side.t1 { top: 13%; }
+      .naera-tree-side.t2 { top: 34%; }
+      .naera-tree-side.t3 { top: 79%; }
+
+      .naera-reindeer-parade {
+        top: 25%;
+        animation-duration: 14s;
+      }
+
+      .naera-reindeer-animal {
+        font-size: 23px;
+      }
+
+      .naera-reindeer-line {
+        gap: 3px;
+      }
+
+      .naera-new-price {
+        font-size: 27px;
+        padding: 10px 12px;
+      }
+
       .naera-holiday-banner {
-        padding: 24px 16px;
+        padding: 30px 16px;
       }
-      .naera-santa { font-size: 40px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .naera-tree, .naera-santa, .naera-flake {
+      .naera-side-santa,
+      .naera-tree-side,
+      .naera-reindeer-parade,
+      .naera-flake {
         animation: none !important;
       }
-      .naera-snow { display: none; }
+      .naera-snow,
+      .naera-reindeer-parade {
+        display: none;
+      }
     }
   `;
+
+  const style = document.createElement("style");
+  style.textContent = CSS;
   document.head.appendChild(style);
 
-  function initializeChristmas() {
-    // Banner Natal
+  function createBanner() {
+    if (document.querySelector(".naera-holiday-banner")) return;
+
+    const hero = document.querySelector("#home, .hero");
+    if (!hero) return;
+
     const banner = document.createElement("section");
     banner.className = "naera-holiday-banner";
+
     banner.innerHTML = `
-      <span class="naera-santa" aria-hidden="true">🎅</span>
-      <h2>🎄 Christmas & New Year Special 🎄</h2>
+      <div style="font-size:45px">🎅🎄🎁</div>
+      <h2>Christmas & New Year Special</h2>
       <p>${english
         ? "Celebrate the holidays with NAERA TRANSLATION!"
         : "Rayakan Natal dan Tahun Baru bersama NAERA TRANSLATION!"
       }</p>
-      <p>${english
+      <p><strong>${english
         ? "Special Fasttrack Translation Package"
         : "Paket Fasttrack Khusus Natal & Tahun Baru"
-      }</p>
-      <h2><s>Rp65.000</s> → Rp55.000</h2>
+      }</strong></p>
+      <div class="naera-banner-old">Rp65.000</div>
+      <div class="naera-banner-price">Rp55.000</div>
       <p>${english
         ? "Per page · Estimated 4–5 days"
         : "Per halaman · Estimasi 4–5 hari"
       }</p>
-      <a href="#pricelist">
-        ${english ? "View Holiday Offer" : "Lihat Promo Spesial"}
+      <a href="#pricing" class="naera-holiday-link">
+        ${english
+          ? "View Holiday Offer"
+          : "Lihat Promo Spesial"
+        }
       </a>
     `;
 
-    const hero = document.querySelector("#home");
-    if (hero) hero.insertAdjacentElement("afterend", banner);
+    hero.insertAdjacentElement("afterend", banner);
+  }
 
-    // Perbarui kartu harga Fasttrack
-    const cards = [...document.querySelectorAll(
-      ".price-card, .pricing-card, article"
-    )];
+  function updateFasttrackPrice() {
+    const cards = [
+      ...document.querySelectorAll(
+        ".price-card, .pricing-card, article"
+      )
+    ];
 
     const fasttrack = cards.find(card =>
-      /fasttrack/i.test(card.querySelector("h3")?.textContent || "")
-      && /65[.,]000/.test(card.textContent)
+      /fast[\s-]*track/i.test(
+        card.querySelector("h3")?.textContent ||
+        card.textContent.slice(0,120)
+      ) &&
+      /65[.,]000/.test(card.textContent)
     );
 
-    if (fasttrack) {
-      const price = [...fasttrack.querySelectorAll("*")]
-        .find(el =>
-          el.children.length === 0 &&
-          /65[.,]000/.test(el.textContent)
-        );
+    if (!fasttrack ||
+        fasttrack.querySelector(".naera-new-price")) return;
 
-      const label = document.createElement("div");
-      label.className = "naera-promo-label";
-      label.textContent = "🎁 CHRISTMAS & NEW YEAR SPECIAL";
+    const price = [
+      ...fasttrack.querySelectorAll("*")
+    ].find(el =>
+      el.children.length === 0 &&
+      /65[.,]000/.test(el.textContent)
+    );
 
-      const oldPrice = document.createElement("div");
-      oldPrice.className = "naera-old-price";
-      oldPrice.textContent = "Rp65.000";
+    const label = document.createElement("div");
+    label.className = "naera-promo-label";
+    label.textContent = "🎁 CHRISTMAS & NEW YEAR SPECIAL";
 
-      const newPrice = document.createElement("div");
-      newPrice.className = "naera-new-price";
-      newPrice.textContent = "Rp55.000 / halaman";
+    const oldPrice = document.createElement("div");
+    oldPrice.className = "naera-old-price";
+    oldPrice.textContent = "Rp65.000";
 
-      if (price) {
-        const container = price.closest(".price-amount") || price;
-        container.replaceWith(label, oldPrice, newPrice);
-      } else {
-        fasttrack.append(label, oldPrice, newPrice);
-      }
+    const newPrice = document.createElement("div");
+    newPrice.className = "naera-new-price";
+    newPrice.textContent = english
+      ? "Rp55.000 / page"
+      : "Rp55.000 / halaman";
+
+    if (price) {
+      const container =
+        price.closest(".price-amount") || price;
+      container.replaceWith(label, oldPrice, newPrice);
+    } else {
+      fasttrack.append(label, oldPrice, newPrice);
     }
+  }
 
-    // Pohon Natal bergerak
-    const tree = document.createElement("div");
-    tree.className = "naera-tree";
-    tree.textContent = "🎄";
-    tree.setAttribute("aria-hidden", "true");
-    document.body.appendChild(tree);
+  function connectPricingButton() {
+    const button = document.querySelector(
+      ".naera-holiday-link"
+    );
+    if (!button) return;
 
-    // Salju pada seluruh halaman, termasuk setiap section
+    button.addEventListener("click", event => {
+      const pricing =
+        document.querySelector("#pricing") ||
+        document.querySelector("#pricelist") ||
+        document.querySelector("#harga") ||
+        [...document.querySelectorAll("section")]
+          .find(section =>
+            /pricing|daftar harga/i.test(
+              section.querySelector("h2")?.textContent || ""
+            )
+          );
+
+      if (!pricing) return;
+
+      event.preventDefault();
+      pricing.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
+  }
+
+  function createSideDecorations() {
+    if (document.querySelector(".naera-side-santa")) return;
+
+    ["left", "right"].forEach(side => {
+      const santa = document.createElement("div");
+      santa.className = "naera-side-santa " + side;
+      santa.setAttribute("aria-hidden", "true");
+      santa.innerHTML = `
+        <span class="santa-icon">🎅</span>
+        <span class="gift-icon">🎁🎄</span>
+      `;
+      document.body.appendChild(santa);
+    });
+
+    ["left", "right"].forEach(side => {
+      for (let i = 1; i <= 3; i++) {
+        const tree = document.createElement("div");
+        tree.className =
+          "naera-tree-side " + side + " t" + i;
+        tree.textContent = "🎄";
+        tree.setAttribute("aria-hidden", "true");
+        document.body.appendChild(tree);
+      }
+    });
+  }
+
+  function createSnow() {
+    if (document.querySelector(".naera-snow")) return;
+
     const snow = document.createElement("div");
     snow.className = "naera-snow";
     snow.setAttribute("aria-hidden", "true");
@@ -316,22 +586,18 @@
       flake.className = "naera-flake";
       flake.textContent = i % 4 === 0 ? "❄" : "•";
 
-      flake.style.setProperty("--x", Math.random() * 100 + "%");
-      flake.style.setProperty(
-        "--size", (7 + Math.random() * 13) + "px"
-      );
-      flake.style.setProperty(
-        "--opacity", (0.35 + Math.random() * .55)
-      );
-      flake.style.setProperty(
-        "--duration", (9 + Math.random() * 12) + "s"
-      );
-      flake.style.setProperty(
-        "--delay", (-Math.random() * 20) + "s"
-      );
-      flake.style.setProperty(
-        "--drift", ((Math.random() - .5) * 110) + "px"
-      );
+      flake.style.setProperty("--x",
+        Math.random() * 100 + "%");
+      flake.style.setProperty("--size",
+        (7 + Math.random() * 13) + "px");
+      flake.style.setProperty("--opacity",
+        0.35 + Math.random() * .55);
+      flake.style.setProperty("--duration",
+        (9 + Math.random() * 12) + "s");
+      flake.style.setProperty("--delay",
+        (-Math.random() * 20) + "s");
+      flake.style.setProperty("--drift",
+        ((Math.random() - .5) * 110) + "px");
 
       snow.appendChild(flake);
     }
@@ -339,291 +605,54 @@
     document.body.appendChild(snow);
   }
 
+  function createReindeer() {
+    if (document.querySelector(
+      ".naera-reindeer-parade"
+    )) return;
+
+    const parade = document.createElement("div");
+    parade.className = "naera-reindeer-parade";
+    parade.setAttribute("aria-hidden", "true");
+
+    const line = document.createElement("div");
+    line.className = "naera-reindeer-line";
+
+    for (let i = 0; i < 6; i++) {
+      const deer = document.createElement("span");
+      deer.className = "naera-reindeer-animal";
+      deer.textContent = "🦌";
+      line.appendChild(deer);
+    }
+
+    parade.appendChild(line);
+    document.body.appendChild(parade);
+  }
+
+  function initializeChristmas() {
+    // Remove previous flying Santa elements
+    document.querySelector("#naera-santa-fly")?.remove();
+    document.querySelectorAll(".naera-flying-santa")
+      .forEach(el => el.remove());
+
+    // Remove old single tree if present
+    document.querySelector(".naera-tree")?.remove();
+
+    createBanner();
+    updateFasttrackPrice();
+    connectPricingButton();
+    createSideDecorations();
+    createSnow();
+    createReindeer();
+  }
+
   if (document.readyState === "loading") {
     document.addEventListener(
-      "DOMContentLoaded", initializeChristmas, { once: true }
+      "DOMContentLoaded",
+      initializeChristmas,
+      { once: true }
     );
   } else {
     initializeChristmas();
   }
 })();
-  /* SINTERKLAS JUMBO - NAERA CHRISTMAS */
-
-const santaBigStyle = document.createElement("style");
-
-santaBigStyle.textContent = `
-  .naera-flying-santa {
-    top: 18% !important;
-    z-index: 9999 !important;
-  }
-
-  .naera-santa-scene {
-    transform-origin: center center;
-    animation: santaFloatBig 2s ease-in-out infinite !important;
-  }
-
-  .naera-reindeer {
-    font-size: 115px !important;
-  }
-
-  .naera-sleigh {
-    font-size: 145px !important;
-    background: transparent !important;
-  }
-
-  .naera-rope {
-    width: 65px !important;
-  }
-
-  .naera-gifts {
-    font-size: 125px !important;
-  }
-
-  @keyframes santaFloatBig {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
-  }
-
-  @media (max-width: 600px) {
-    .naera-flying-santa {
-      top: 20% !important;
-    }
-
-    .naera-reindeer {
-      font-size: 75px !important;
-    }
-
-    .naera-sleigh {
-      font-size: 105px !important;
-    }
-
-    .naera-gifts {
-      font-size: 90px !important;
-    }
-
-    .naera-rope {
-      width: 30px !important;
-    }
-  }
-`;
-
-document.head.appendChild(santaBigStyle);
-/* NAERA - SANTA TERBANG BERULANG */
-
-(() => {
-  if (document.querySelector("#naera-santa-fly")) return;
-
-  const css = document.createElement("style");
-  css.textContent = `
-    #naera-santa-fly {
-      position: fixed;
-      top: 17%;
-      left: 0;
-      z-index: 99999;
-      pointer-events: none;
-      width: max-content;
-      animation: naeraSantaCross 16s linear infinite;
-      will-change: transform;
-    }
-
-    #naera-santa-fly .santa-group {
-      display: flex;
-      align-items: center;
-      white-space: nowrap;
-      gap: 8px;
-      animation: naeraSantaBounce 2s ease-in-out infinite;
-    }
-
-    #naera-santa-fly .deer {
-      font-size: 100px;
-      display: inline-block;
-      transform: scaleX(-1);
-    }
-
-    #naera-santa-fly .santa {
-      font-size: 145px;
-    }
-
-    #naera-santa-fly .gifts {
-      font-size: 95px;
-    }
-
-    @keyframes naeraSantaCross {
-      from {
-        transform: translateX(calc(100vw + 50px));
-      }
-      to {
-        transform: translateX(-110%);
-      }
-    }
-
-    @keyframes naeraSantaBounce {
-      0%, 100% { translate: 0 0; }
-      50% { translate: 0 -22px; }
-    }
-
-    @media (max-width: 600px) {
-      #naera-santa-fly {
-        top: 22%;
-        animation-duration: 12s;
-      }
-      #naera-santa-fly .deer {
-        font-size: 65px;
-      }
-      #naera-santa-fly .santa {
-        font-size: 105px;
-      }
-      #naera-santa-fly .gifts {
-        font-size: 65px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      #naera-santa-fly {
-        animation: none;
-        transform: translateX(0);
-      }
-      #naera-santa-fly .santa-group {
-        animation: none;
-      }
-    }
-  `;
-
-  document.head.appendChild(css);
-
-  function startSanta() {
-    const santa = document.createElement("div");
-    santa.id = "naera-santa-fly";
-    santa.setAttribute("aria-hidden", "true");
-
-    santa.innerHTML = `
-      <div class="santa-group">
-        <span class="deer">🦌</span>
-        <span class="deer">🦌</span>
-        <span style="color:#e8c477;font-size:35px">〰</span>
-        <span class="santa">🎅</span>
-        <span class="gifts">🛷🎁🎁</span>
-        <span style="font-size:35px">✨❄️</span>
-      </div>
-    `;
-
-    document.body.appendChild(santa);
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener(
-      "DOMContentLoaded", startSanta, { once: true }
-    );
-  } else {
-    startSanta();
-  }
-})();
-/* NAERA CHRISTMAS - SANTA DI KANAN & KIRI */
-
-(() => {
-  if (window.naeraSideSantaLoaded) return;
-  window.naeraSideSantaLoaded = true;
-
-  const style = document.createElement("style");
-
-  style.textContent = `
-    /* Sembunyikan Santa yang terbang */
-    #naera-santa-fly,
-    .naera-flying-santa {
-      display: none !important;
-    }
-
-    /* Santa di samping halaman */
-    .naera-side-santa {
-      position: fixed;
-      top: 42%;
-      z-index: 900;
-      pointer-events: none;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      animation: naeraSideSwing 3s ease-in-out infinite;
-      filter: drop-shadow(0 5px 8px rgba(0,0,0,.25));
-    }
-
-    .naera-side-santa.left {
-      left: 5px;
-    }
-
-    .naera-side-santa.right {
-      right: 5px;
-      animation-delay: 1.5s;
-    }
-
-    .naera-side-santa .santa-icon {
-      font-size: 85px;
-      line-height: 1.1;
-    }
-
-    .naera-side-santa .gift-icon {
-      font-size: 40px;
-    }
-
-    @keyframes naeraSideSwing {
-      0%, 100% {
-        transform: translateY(0) rotate(-5deg);
-      }
-      50% {
-        transform: translateY(-12px) rotate(5deg);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .naera-side-santa {
-        top: 65%;
-        opacity: .9;
-      }
-
-      .naera-side-santa .santa-icon {
-        font-size: 48px;
-      }
-
-      .naera-side-santa .gift-icon {
-        font-size: 25px;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .naera-side-santa {
-        animation: none !important;
-      }
-    }
-  `;
-
-  document.head.appendChild(style);
-
-  function createSideSanta() {
-    if (document.querySelector(".naera-side-santa")) return;
-
-    const left = document.createElement("div");
-    left.className = "naera-side-santa left";
-    left.setAttribute("aria-hidden", "true");
-    left.innerHTML = `
-      <span class="santa-icon">🎅</span>
-      <span class="gift-icon">🎁🎄</span>
-    `;
-
-    const right = document.createElement("div");
-    right.className = "naera-side-santa right";
-    right.setAttribute("aria-hidden", "true");
-    right.innerHTML = `
-      <span class="santa-icon">🎅</span>
-      <span class="gift-icon">🎄🎁</span>
-    `;
-
-    document.body.append(left, right);
-  }
-
-  if (document.readyState === "loading") {
-    document.addEventListener(
-      "DOMContentLoaded", createSideSanta, { once: true }
-    );
-  } else {
-    createSideSanta();
-  }
-})();
+        
