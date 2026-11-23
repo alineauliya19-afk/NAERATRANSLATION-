@@ -408,3 +408,113 @@ santaBigStyle.textContent = `
 `;
 
 document.head.appendChild(santaBigStyle);
+/* NAERA - SANTA TERBANG BERULANG */
+
+(() => {
+  if (document.querySelector("#naera-santa-fly")) return;
+
+  const css = document.createElement("style");
+  css.textContent = `
+    #naera-santa-fly {
+      position: fixed;
+      top: 17%;
+      left: 0;
+      z-index: 99999;
+      pointer-events: none;
+      width: max-content;
+      animation: naeraSantaCross 16s linear infinite;
+      will-change: transform;
+    }
+
+    #naera-santa-fly .santa-group {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      gap: 8px;
+      animation: naeraSantaBounce 2s ease-in-out infinite;
+    }
+
+    #naera-santa-fly .deer {
+      font-size: 100px;
+      display: inline-block;
+      transform: scaleX(-1);
+    }
+
+    #naera-santa-fly .santa {
+      font-size: 145px;
+    }
+
+    #naera-santa-fly .gifts {
+      font-size: 95px;
+    }
+
+    @keyframes naeraSantaCross {
+      from {
+        transform: translateX(calc(100vw + 50px));
+      }
+      to {
+        transform: translateX(-110%);
+      }
+    }
+
+    @keyframes naeraSantaBounce {
+      0%, 100% { translate: 0 0; }
+      50% { translate: 0 -22px; }
+    }
+
+    @media (max-width: 600px) {
+      #naera-santa-fly {
+        top: 22%;
+        animation-duration: 12s;
+      }
+      #naera-santa-fly .deer {
+        font-size: 65px;
+      }
+      #naera-santa-fly .santa {
+        font-size: 105px;
+      }
+      #naera-santa-fly .gifts {
+        font-size: 65px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      #naera-santa-fly {
+        animation: none;
+        transform: translateX(0);
+      }
+      #naera-santa-fly .santa-group {
+        animation: none;
+      }
+    }
+  `;
+
+  document.head.appendChild(css);
+
+  function startSanta() {
+    const santa = document.createElement("div");
+    santa.id = "naera-santa-fly";
+    santa.setAttribute("aria-hidden", "true");
+
+    santa.innerHTML = `
+      <div class="santa-group">
+        <span class="deer">🦌</span>
+        <span class="deer">🦌</span>
+        <span style="color:#e8c477;font-size:35px">〰</span>
+        <span class="santa">🎅</span>
+        <span class="gifts">🛷🎁🎁</span>
+        <span style="font-size:35px">✨❄️</span>
+      </div>
+    `;
+
+    document.body.appendChild(santa);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded", startSanta, { once: true }
+    );
+  } else {
+    startSanta();
+  }
+})();
