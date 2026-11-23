@@ -1,74 +1,71 @@
 
 // NAERA TRANSLATION
-// Shared script for Indonesian and English pages.
+// Digunakan oleh halaman Indonesia dan Inggris.
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.querySelector(".menu-toggle");
   const menu = document.querySelector("#main-menu");
 
   if (menuButton && menu) {
-    const closeMenu = () => {
+    const isEnglish = document.documentElement.lang === "en";
+
+    function closeMenu() {
       menu.classList.remove("is-open");
       menuButton.setAttribute("aria-expanded", "false");
       menuButton.setAttribute(
         "aria-label",
-        document.documentElement.lang === "en"
-          ? "Open navigation menu"
-          : "Buka menu navigasi"
+        isEnglish ? "Open menu" : "Buka menu"
       );
-    };
+    }
 
-    const openMenu = () => {
+    function openMenu() {
       menu.classList.add("is-open");
       menuButton.setAttribute("aria-expanded", "true");
       menuButton.setAttribute(
         "aria-label",
-        document.documentElement.lang === "en"
-          ? "Close navigation menu"
-          : "Tutup menu navigasi"
+        isEnglish ? "Close menu" : "Tutup menu"
       );
-    };
+    }
 
     menuButton.addEventListener("click", () => {
-      const isOpen = menu.classList.contains("is-open");
-
-      if (isOpen) {
+      if (menu.classList.contains("is-open")) {
         closeMenu();
       } else {
         openMenu();
       }
     });
 
-    // Close the menu after selecting a section.
+    // Tutup menu setelah pengguna memilih bagian.
     menu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", closeMenu);
     });
 
-    // Close when tapping outside the navigation.
+    // Tutup menu ketika pengguna mengetuk area luar.
     document.addEventListener("click", (event) => {
-      if (
-        menu.classList.contains("is-open") &&
+      const clickedOutside =
         !menu.contains(event.target) &&
-        !menuButton.contains(event.target)
-      ) {
+        !menuButton.contains(event.target);
+
+      if (clickedOutside) {
         closeMenu();
       }
     });
 
-    // Support keyboard navigation.
+    // Tutup menu dengan tombol Escape.
     document.addEventListener("keydown", (event) => {
       if (event.key === "Escape") {
         closeMenu();
+        menuButton.focus();
       }
     });
   }
 
-  // Keep the footer year current.
+  // Perbarui tahun copyright secara otomatis.
   document.querySelectorAll(".current-year").forEach((element) => {
     element.textContent = new Date().getFullYear();
   });
 
-  // FormSubmit handles form submission directly.
-  // Do not use preventDefault() here, because that would
-  // stop the form from being sent to FormSubmit.
+  // Formulir dikirim langsung melalui FormSubmit.
+  // Jangan menambahkan preventDefault() pada submit.
 });
+                                                     
