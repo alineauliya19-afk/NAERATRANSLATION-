@@ -656,3 +656,48 @@
   }
 })();
         
+/* NAERA - FIX HARGA LAMA FASTTRACK */
+
+(() => {
+  const style = document.createElement("style");
+
+  style.textContent = `
+    .naera-old-price,
+    .naera-original-price {
+      color: #075b40 !important;
+      text-decoration: line-through !important;
+      text-decoration-color: #075b40 !important;
+      text-decoration-thickness: 3px !important;
+      opacity: 1 !important;
+      font-weight: 700 !important;
+    }
+  `;
+
+  document.head.appendChild(style);
+
+  function fixOldPrice() {
+    document.querySelectorAll(
+      ".price-card, .pricing-card, article"
+    ).forEach(card => {
+      if (!/fast[\s-]*track/i.test(card.textContent)) return;
+
+      card.querySelectorAll("*").forEach(el => {
+        if (
+          el.children.length === 0 &&
+          /65[.,]000/.test(el.textContent) &&
+          !el.closest(".naera-old-price")
+        ) {
+          el.classList.add("naera-original-price");
+        }
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded", fixOldPrice
+    );
+  } else {
+    fixOldPrice();
+  }
+})();
