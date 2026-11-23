@@ -518,3 +518,112 @@ document.head.appendChild(santaBigStyle);
     startSanta();
   }
 })();
+/* NAERA CHRISTMAS - SANTA DI KANAN & KIRI */
+
+(() => {
+  if (window.naeraSideSantaLoaded) return;
+  window.naeraSideSantaLoaded = true;
+
+  const style = document.createElement("style");
+
+  style.textContent = `
+    /* Sembunyikan Santa yang terbang */
+    #naera-santa-fly,
+    .naera-flying-santa {
+      display: none !important;
+    }
+
+    /* Santa di samping halaman */
+    .naera-side-santa {
+      position: fixed;
+      top: 42%;
+      z-index: 900;
+      pointer-events: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: naeraSideSwing 3s ease-in-out infinite;
+      filter: drop-shadow(0 5px 8px rgba(0,0,0,.25));
+    }
+
+    .naera-side-santa.left {
+      left: 5px;
+    }
+
+    .naera-side-santa.right {
+      right: 5px;
+      animation-delay: 1.5s;
+    }
+
+    .naera-side-santa .santa-icon {
+      font-size: 85px;
+      line-height: 1.1;
+    }
+
+    .naera-side-santa .gift-icon {
+      font-size: 40px;
+    }
+
+    @keyframes naeraSideSwing {
+      0%, 100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+      50% {
+        transform: translateY(-12px) rotate(5deg);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .naera-side-santa {
+        top: 65%;
+        opacity: .9;
+      }
+
+      .naera-side-santa .santa-icon {
+        font-size: 48px;
+      }
+
+      .naera-side-santa .gift-icon {
+        font-size: 25px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .naera-side-santa {
+        animation: none !important;
+      }
+    }
+  `;
+
+  document.head.appendChild(style);
+
+  function createSideSanta() {
+    if (document.querySelector(".naera-side-santa")) return;
+
+    const left = document.createElement("div");
+    left.className = "naera-side-santa left";
+    left.setAttribute("aria-hidden", "true");
+    left.innerHTML = `
+      <span class="santa-icon">🎅</span>
+      <span class="gift-icon">🎁🎄</span>
+    `;
+
+    const right = document.createElement("div");
+    right.className = "naera-side-santa right";
+    right.setAttribute("aria-hidden", "true");
+    right.innerHTML = `
+      <span class="santa-icon">🎅</span>
+      <span class="gift-icon">🎄🎁</span>
+    `;
+
+    document.body.append(left, right);
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener(
+      "DOMContentLoaded", createSideSanta, { once: true }
+    );
+  } else {
+    createSideSanta();
+  }
+})();
