@@ -347,4 +347,64 @@
     initializeChristmas();
   }
 })();
-  
+  /* SINTERKLAS JUMBO - NAERA CHRISTMAS */
+
+const santaBigStyle = document.createElement("style");
+
+santaBigStyle.textContent = `
+  .naera-flying-santa {
+    top: 18% !important;
+    z-index: 9999 !important;
+  }
+
+  .naera-santa-scene {
+    transform-origin: center center;
+    animation: santaFloatBig 2s ease-in-out infinite !important;
+  }
+
+  .naera-reindeer {
+    font-size: 115px !important;
+  }
+
+  .naera-sleigh {
+    font-size: 145px !important;
+    background: transparent !important;
+  }
+
+  .naera-rope {
+    width: 65px !important;
+  }
+
+  .naera-gifts {
+    font-size: 125px !important;
+  }
+
+  @keyframes santaFloatBig {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @media (max-width: 600px) {
+    .naera-flying-santa {
+      top: 20% !important;
+    }
+
+    .naera-reindeer {
+      font-size: 75px !important;
+    }
+
+    .naera-sleigh {
+      font-size: 105px !important;
+    }
+
+    .naera-gifts {
+      font-size: 90px !important;
+    }
+
+    .naera-rope {
+      width: 30px !important;
+    }
+  }
+`;
+
+document.head.appendChild(santaBigStyle);
