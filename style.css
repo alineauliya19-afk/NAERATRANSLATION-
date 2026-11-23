@@ -9,7 +9,7 @@
   --ink: #241D20;
   --muted: #63595C;
   --white: #FFFFFF;
-  --border: rgba(217, 184, 106, .38);
+  --border: rgba(217,184,106,.38);
   --font-body: 'DM Sans', Arial, sans-serif;
   --font-heading: 'Playfair Display', Georgia, serif;
 }
@@ -164,7 +164,7 @@ p {
   justify-content: space-between;
   gap: 12px;
   padding: 13px max(24px, calc((100vw - 1120px)/2));
-  background: rgba(41, 15, 28, .97);
+  background: rgba(41,15,28,.97);
   border-bottom: 1px solid var(--border);
   box-shadow: 0 4px 24px rgba(0,0,0,.12);
 }
@@ -293,12 +293,7 @@ p {
   color: var(--gold);
 }
 
-/* BATIK MADURA MODERN */
-
-/*
-  Ornamen SVG dekoratif berulang.
-  Tidak memerlukan file gambar eksternal.
-*/
+/* ORNAMEN BATIK DI PINGGIR */
 
 .batik-section {
   overflow: hidden;
@@ -360,7 +355,7 @@ p {
   margin: 22px 0 24px;
 }
 
-.hero-description {
+.hero-content > p {
   max-width: 650px;
   margin: 0 auto 30px;
   font-size: clamp(1rem, 2vw, 1.15rem);
@@ -421,15 +416,9 @@ p {
   background: rgba(217,184,106,.12);
 }
 
-.btn-emerald {
-  background: var(--emerald);
-  color: var(--cream);
-}
-
 /* ABOUT */
 
-.feature-grid,
-.team-grid {
+.feature-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -466,11 +455,14 @@ p {
 /* TEAM */
 
 .team-grid {
-  grid-template-columns: repeat(4, 1fr);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 36px;
 }
 
 .team-card {
-  padding: 30px 15px;
+  padding: 28px 16px;
   text-align: center;
   border: 1px solid var(--border);
   border-radius: 9px;
@@ -493,6 +485,13 @@ p {
   margin-bottom: 7px;
 }
 
+.team-card strong {
+  display: block;
+  margin-bottom: 12px;
+  color: var(--gold);
+  font-size: .9rem;
+}
+
 .team-card p {
   font-size: .86rem;
   color: #E8DADD;
@@ -500,19 +499,22 @@ p {
 }
 
 .team-note {
-  max-width: 590px;
+  max-width: 650px;
   margin: 28px auto 0;
-  padding: 20px;
+  padding: 24px;
   text-align: center;
-  border-top: 1px solid var(--border);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: rgba(255,255,255,.055);
 }
 
+.team-note h3,
 .team-note strong {
   color: var(--gold);
 }
 
 .team-note p {
-  margin: 5px 0 0;
+  margin: 8px 0 0;
 }
 
 /* SERVICES */
@@ -613,28 +615,79 @@ p {
   margin: 7px 0 25px;
 }
 
-/* SAMPLES */
+/* TRANSLATION SAMPLES */
 
-.sample-panel {
-  margin-top: 30px;
-  padding: 40px 24px;
+.sample-group {
+  margin-top: 35px;
+  padding: 25px;
   background: #FFFFFF;
-  border: 1px solid #E4D5B9;
+  border: 1px solid #E5D8C2;
   border-radius: 12px;
+  box-shadow: 0 6px 25px rgba(41,15,28,.06);
+}
+
+.sample-heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.sample-heading h3 {
+  margin: 0 0 5px;
+  color: var(--maroon);
+}
+
+.sample-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.sample-number {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--emerald);
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.sample-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+}
+
+.sample-card {
+  min-width: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid #E0D2BC;
+  border-radius: 9px;
+  background: #F9F3EA;
+}
+
+.sample-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.sample-card figcaption {
+  padding: 12px;
+  background: var(--emerald);
+  color: var(--cream);
   text-align: center;
+  font-size: .85rem;
+  font-weight: 600;
 }
 
-.sample-panel p {
-  max-width: 520px;
-  margin: 0 auto 24px;
-}
-
-.sample-icon {
-  font-size: 2.6rem;
-  color: #99742E;
-}
-
-/* AGREEMENT */
+/* CONTRACT OF AGREEMENT */
 
 .agreement-section {
   background: #F8F1E6;
@@ -661,6 +714,15 @@ p {
 .agreement-card p {
   color: #41393C;
   margin-bottom: 0;
+}
+
+.agreement-card p + p {
+  margin-top: 13px;
+}
+
+.agreement-highlight {
+  border-left-color: var(--emerald);
+  background: #F2F7F3;
 }
 
 .agreement-disclaimer {
@@ -773,7 +835,7 @@ p {
   margin-bottom: 17px;
 }
 
-/* RESPONSIVE */
+/* TABLET */
 
 @media (max-width: 850px) {
   .feature-grid {
@@ -781,7 +843,7 @@ p {
   }
 
   .team-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .contact-grid {
@@ -789,6 +851,8 @@ p {
     gap: 28px;
   }
 }
+
+/* MOBILE */
 
 @media (max-width: 600px) {
   html {
@@ -860,8 +924,8 @@ p {
   }
 
   .feature-grid,
-  .team-grid,
-  .two-column {
+  .two-column,
+  .sample-grid {
     grid-template-columns: 1fr;
   }
 
@@ -877,6 +941,10 @@ p {
   .service-card,
   .price-card {
     padding: 27px 20px;
+  }
+
+  .sample-group {
+    padding: 16px;
   }
 
   .agreement-card {
@@ -923,3 +991,4 @@ p {
     animation-duration: .01ms !important;
   }
   }
+    
